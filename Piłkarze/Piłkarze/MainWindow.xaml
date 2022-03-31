@@ -1,0 +1,89 @@
+﻿<Window x:Class="Piłkarze.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Piłkarze"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="500">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value= "LightGray"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value=" 2,2,2,2"/>
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Background" Value="Beige"/>
+            <Setter Property ="FontWeight" Value="Bold"/>
+            <Setter Property="TextAlignment" Value= "Center"/>
+            <Setter Property="Margin" Value="5" />
+
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="2,2,2,2"/>
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="2,2,2,2" />
+        </Style>
+    </Window.Resources>
+    <Grid RenderTransformOrigin="0.459,0.493" Margin="0,0,0,1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="8*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+
+        </Grid.ColumnDefinitions>
+        <Button Content = "Dodaj" Grid.Row ="6" Grid.Column ="3" Click="Add_Click"/>
+        <Button Content =" Usuń" Grid.Row ="6" Grid.Column = "4"  Click ="Remove_Click"/>
+        <TextBlock x:Name="Imię" Grid.Row=" 1" Grid.Column="0" Grid.ColumnSpan="2" Text=" Imię"/>
+        <TextBlock x:Name="Nazwisko" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Nazwisko"/>
+        <TextBlock x:Name="Wzrost" Grid.Row=" 3" Grid.Column="0" Grid.ColumnSpan="2" Text="Wzrost [cm]"/>
+        <TextBlock x:Name="Waga" Grid.Row=" 4" Grid.Column="0" Grid.ColumnSpan="2" Text="Waga [kg]"/>
+        <TextBlock x:Name="Pozycja" Grid.Row=" 5" Grid.Column="0" Grid.ColumnSpan="2" Text="Pozycja"/>
+      
+        <Border HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="163" Grid.Row="1" Grid.ColumnSpan="2" />
+        <Border HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="163" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Border HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="163" Grid.Row="3" Grid.ColumnSpan="2"/>
+        <Border HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="163" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <Border HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="163" Grid.Row="5" Grid.ColumnSpan="2"/>
+        
+        <TextBox x:Name="Pole_nazwisko" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Text=""/>
+        <TextBox x:Name="Pole_wzrost" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Text=""/>
+        <TextBox x:Name="Pole_waga" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Text=""/>
+        <ComboBox x:Name ="Pozycje" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Background="Gray" FontSize="24"
+                      Margin="5">
+            <ComboBoxItem x:Name="Bramkarz" Content="Bramkarz" />
+            <ComboBoxItem x:Name="Obrońca" Content="Obrońca" />
+            <ComboBoxItem x:Name="Pomocnik" Content="Pomocnik" />
+            <ComboBoxItem x:Name="Napastnik" Content="Napastnik" />
+        </ComboBox>
+        <Label Content="Imię"></Label>
+        <local:UserControl1 x:Name="Pole_imie" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2"  Text="" />
+        <Label Content="Nazwisko"></Label>
+        <local:UserControl1 x:Name="textboxWEPNazwisko" Margin="10" FontSize="15"/>
+        <Label Content="Wzrost"></Label>
+        <local:UserControl1 x:Name="textboxWEPWzrost" Margin="10" FontSize="15"/>
+        <Label Content="Waga"></Label>
+        <local:UserControl1 x:Name="textboxWEPWaga" Margin="10" FontSize="15"/>
+
+    </Grid>
+</Window>
